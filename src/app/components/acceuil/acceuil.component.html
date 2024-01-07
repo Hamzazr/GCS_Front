@@ -1,0 +1,74 @@
+
+<nz-layout>
+    <nz-sider nzCollapsible nzWidth="200px">
+      <div class="logo">Bushido</div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <!-- <li nz-menu-item>
+          <span><a routerLink="/">Home</a></span>
+        </li>  -->
+        <li nz-menu-item>
+            <span nz-icon nzType="pie-chart"></span>
+            <span>Desktop</span>
+        </li>
+    
+      <li nz-submenu nzTitle="Etudiant" nzIcon="team">
+        <ul>
+            <li nz-menu-item>
+                <a routerLink="listE">Liste</a>
+            </li>
+            <li nz-menu-item>
+                <a routerLink="AddE">Ajouter</a>
+            </li>
+            <li nz-menu-item>
+                <a routerLink="EditE">Modifier</a>
+            </li>
+
+        </ul>
+      </li>
+
+      <li nz-submenu nzTitle="Cours" nzIcon="file">
+        <ul>
+          <li nz-menu-item>
+              <span><a routerLink="recipient">List</a></span>
+          </li>
+            <li nz-menu-item>
+                <span><a routerLink="recipient">Ajouter</a></span>
+            </li>
+            <li nz-menu-item>
+                <span><a routerLink="recipient">Modifier</a></span>
+            </li>
+        </ul>
+      </li>
+
+      <li nz-submenu nzTitle="Professeur" nzIcon="user">
+        <ul>
+          <li nz-menu-item>
+              <span><a routerLink="recipient">List</a></span>
+          </li>
+            <li nz-menu-item>
+                <span><a routerLink="recipient">Ajouter</a></span>
+            </li>
+            <li nz-menu-item>
+                <span><a routerLink="recipient">Modifier</a></span>
+            </li>
+        </ul>
+      </li>
+
+      <li nz-menu-item>
+        <span nz-icon nzType="logout"></span>
+            <span>LogOut</span>
+      </li> 
+        
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+      
+      </nz-header>
+      <nz-content>
+        
+        <div class="inner-content"><router-outlet></router-outlet></div>
+      </nz-content>
+      <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+    </nz-layout>
+  </nz-layout>

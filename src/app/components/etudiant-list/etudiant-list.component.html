@@ -1,0 +1,36 @@
+<!-- <div class="etudiant-list-container">
+    <h2>List of Etudiants</h2>
+    <ul class="etudiant-list">
+      <li *ngFor="let etudiant of etudiants" class="etudiant-item">
+        <span class="etudiant-info">
+          {{ etudiant.nom }} {{ etudiant.prenom }} - {{ etudiant.filiere }}
+        </span>
+        <button class="delete-btn" (click)="deleteEtudiant(etudiant.id)">Delete</button>
+      </li>
+    </ul>
+</div> -->
+
+<nz-table #editRowTable nzBordered [nzData]="etudiants">
+      <thead>
+        <tr>
+          <th nzWidth="30%">Nom</th>
+          <th>Prenom</th>
+          <th>Filiere</th>
+          <th>Groupe</th>
+          <th>Tele</th>
+          <th>Mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etudiant of etudiants" class="editable-row">
+          <td>{{ etudiant.nom }}</td>
+          <td>{{ etudiant.prenom }}</td>
+          <td>{{ etudiant.filiere }}</td>
+          <td>{{ etudiant.groupe }}</td>
+          <td>{{ etudiant.tele }}</td>
+          <td>{{ etudiant.mail }}</td>
+        </tr>
+      </tbody>
+</nz-table>
+
+    

@@ -1,0 +1,57 @@
+<!-- src/app/components/etudiant-add/etudiant-add.component.html -->
+
+<div class="etudiant-add-container">
+    <h2>Ajouter Etudiant</h2>
+    <form [formGroup]="etudiantForm" (ngSubmit)="onSubmit()">
+      
+      <div>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" formControlName="nom">
+        <div *ngIf="etudiantForm.get('nom')?.invalid && etudiantForm.get('nom')?.touched" class="error">
+          Nom is required.
+        </div>
+      </div>
+  
+      <div>
+        <label for="prenom">Prenom</label>
+        <input type="text" id="prenom" formControlName="prenom">
+        <div *ngIf="etudiantForm.get('prenom')?.invalid && etudiantForm.get('prenom')?.touched" class="error">
+          Prenom is required.
+        </div>
+      </div>
+  
+      <div>
+        <label for="filiere">Filiere</label>
+        <input type="text" id="filiere" formControlName="filiere">
+        <div *ngIf="etudiantForm.get('filiere')?.invalid && etudiantForm.get('filiere')?.touched" class="error">
+          Filiere is required.
+        </div>
+      </div>
+  
+      <div>
+        <label for="groupe">Groupe</label>
+        <input type="number" id="groupe" formControlName="groupe">
+        <div *ngIf="etudiantForm.get('groupe')?.invalid && etudiantForm.get('groupe')?.touched" class="error">
+          Groupe is required.
+        </div>
+      </div>
+  
+      <div>
+        <label for="tele">Tele</label>
+        <input type="text" id="tele" formControlName="tele">
+      </div>
+  
+      <div>
+        <label for="mail">Mail</label>
+        <input type="email" id="mail" formControlName="mail">
+        <div *ngIf="etudiantForm.get('mail')?.invalid && etudiantForm.get('mail')?.touched" class="error">
+          <div *ngIf="etudiantForm.get('mail')?.errors?.['required']">Mail is required.</div>
+          <div *ngIf="etudiantForm.get('mail')?.errors?.['email']">Invalid email format.</div>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="!etudiantForm.valid">Ajouter</button>
+    </form>
+
+  </div>
+  
