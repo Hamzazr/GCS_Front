@@ -1,0 +1,69 @@
+<div id="cadreR" class="border-b border-gray-900/10 pb-12">
+    <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900" style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Register</h1>
+  
+    <form nz-form [formGroup]="registerForm" class="space-y-6"  >
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nom">Nom </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Nom!">
+            <input nz-input formControlName="nom" id="nom" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="prenom" nzRequired>Prenom </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Prenom!">
+            <input
+              nz-input
+              type="text"
+              id="prenom"
+              formControlName="prenom"
+              
+            />
+          </nz-form-control>  
+        </nz-form-item>
+      
+        <nz-form-item>
+          <nz-form-label
+            [nzSm]="6"
+            [nzXs]="24"
+            nzFor="ecole"
+            nzRequired
+            nzTooltipTitle="What do you want other to call you"
+          >
+            <span>Ecole: </span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your ecole!">
+            <input nz-input id="ecole" formControlName="ecole" />
+          </nz-form-control>
+        </nz-form-item>
+        
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ville" nzRequired>Ville </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Ville!">
+            <input nz-input id="ville" formControlName="ville" placeholder="Ville" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>Email </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Email!">
+            <input nz-input id="email" formControlName="email" placeholder="Email" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Password!">
+            <input nz-input type="password" id="password" formControlName="password" placeholder="Password" />
+          </nz-form-control>
+        </nz-form-item>
+        
+        
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button [nzType]="'primary'">Register</button>
+          </nz-form-control>
+        </nz-form-item>
+    
+  
+  </form>
+  </div>

@@ -9,6 +9,7 @@ import { EtudiantService } from '../../services/etudiant.service';
 })
 export class EtudiantAddComponent implements OnInit {
   etudiantForm!: FormGroup;
+  selectedValue = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,7 +23,7 @@ export class EtudiantAddComponent implements OnInit {
       filiere: ['', Validators.required],
       groupe: ['', Validators.required],
       tele: [''],
-      mail: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 

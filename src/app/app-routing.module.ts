@@ -4,8 +4,19 @@ import { EtudiantAddComponent } from './components/etudiant-add/etudiant-add.com
 import { EtudiantListComponent } from './components/etudiant-list/etudiant-list.component';
 import { EtudiantEditComponent } from './components/etudiant-edit/etudiant-edit.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
+
+  {
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'signup',
+    component:SignUpComponent
+  },
 
   {
     path: '',  

@@ -1,1 +1,141 @@
-<p>etudiant-edit works!</p>
+<!-- src/app/components/etudiant-add/etudiant-add.component.html -->
+
+<div id="cadreR" class="border-b border-gray-900/10 pb-12">
+    <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900" style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Modifier Etudiant</h1>
+  
+    <form nz-form [formGroup]="etudiantForm" class="space-y-6"  >
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nom">Nom </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Nom!">
+            <input nz-input formControlName="nom" id="nom" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="prenom" nzRequired>Prenom </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Prenom!">
+            <input
+              nz-input
+              type="text"
+              id="prenom"
+              formControlName="prenom"
+              
+            />
+          </nz-form-control>  
+        </nz-form-item>
+      
+        <nz-form-item>
+          <nz-form-label
+            [nzSm]="6"
+            [nzXs]="24"
+            nzFor="filiere"
+            nzRequired
+            nzTooltipTitle="What do you want other to call you"
+          >
+            <span>Filiere </span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your filiere!">
+            <input nz-input id="filiere" formControlName="filiere" />
+          </nz-form-control>
+        </nz-form-item>
+        
+        <!-- <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="groupe" nzRequired>Groupe </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Groupe!">
+            <input nz-input id="groupe" formControlName="groupe" placeholder="Groupe" />
+          </nz-form-control>
+        </nz-form-item> -->
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="groupe" nzRequired>Groupe </nz-form-label>
+            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Groupe!">
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" [(ngModel)]="selectedValue">
+                <nz-option nzLabel="G1" nzValue="jack"></nz-option>
+                <nz-option nzLabel="G2" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="G3" nzValue="tom"></nz-option>
+              </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>Email </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Email!">
+            <input nz-input id="email" formControlName="email" placeholder="Email" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="telephone" nzRequired>Telephone </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input telephone!">
+            <input nz-input type="telephone" id="telephone" formControlName="tele" placeholder="telephone" />
+          </nz-form-control>
+        </nz-form-item>
+        
+        
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button [nzType]="'primary'">Modifier</button>
+          </nz-form-control>
+        </nz-form-item>
+    
+  
+  </form>
+  </div>
+  
+  
+  <!-- <div class="etudiant-add-container">
+      <h2>Ajouter Etudiant</h2>
+      <form [formGroup]="etudiantForm" (ngSubmit)="onSubmit()">
+        
+        <div>
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" formControlName="nom">
+          <div *ngIf="etudiantForm.get('nom')?.invalid && etudiantForm.get('nom')?.touched" class="error">
+            Nom is required.
+          </div>
+        </div>
+    
+        <div>
+          <label for="prenom">Prenom</label>
+          <input type="text" id="prenom" formControlName="prenom">
+          <div *ngIf="etudiantForm.get('prenom')?.invalid && etudiantForm.get('prenom')?.touched" class="error">
+            Prenom is required.
+          </div>
+        </div>
+    
+        <div>
+          <label for="filiere">Filiere</label>
+          <input type="text" id="filiere" formControlName="filiere">
+          <div *ngIf="etudiantForm.get('filiere')?.invalid && etudiantForm.get('filiere')?.touched" class="error">
+            Filiere is required.
+          </div>
+        </div>
+    
+        <div>
+          <label for="groupe">Groupe</label>
+          <input type="number" id="groupe" formControlName="groupe">
+          <div *ngIf="etudiantForm.get('groupe')?.invalid && etudiantForm.get('groupe')?.touched" class="error">
+            Groupe is required.
+          </div>
+        </div>
+    
+        <div>
+          <label for="tele">Tele</label>
+          <input type="text" id="tele" formControlName="tele">
+        </div>
+    
+        <div>
+          <label for="mail">Mail</label>
+          <input type="email" id="mail" formControlName="mail">
+          <div *ngIf="etudiantForm.get('mail')?.invalid && etudiantForm.get('mail')?.touched" class="error">
+            <div *ngIf="etudiantForm.get('mail')?.errors?.['required']">Mail is required.</div>
+            <div *ngIf="etudiantForm.get('mail')?.errors?.['email']">Invalid email format.</div>
+          </div>
+        </div>
+    
+        <button type="submit" [disabled]="!etudiantForm.valid">Ajouter</button>
+      </form>
+  
+    </div> -->
+  
+    
+    

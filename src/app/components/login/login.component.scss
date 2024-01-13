@@ -1,0 +1,46 @@
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;   
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+  background-color: #2874A6;
+}
+
+input{
+  width: 100%; 
+  border: solide 0.5px;
+  
+}
+form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+#cadre{
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#cadreR{
+margin-top: 120px;
+margin-left: auto;
+margin-right: auto;
+max-width: 700px;
+border: solid 1px gainsboro;
+padding: 20px;
+border-radius: 30px;
+background-color: rgb(255, 253, 253);
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}

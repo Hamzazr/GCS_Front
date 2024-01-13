@@ -18,6 +18,14 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { LoginComponent } from './components/login/login.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 
 
@@ -29,7 +37,9 @@ registerLocaleData(en);
     EtudiantListComponent,
     EtudiantAddComponent,
     EtudiantEditComponent,
-    AcceuilComponent 
+    AcceuilComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +51,13 @@ registerLocaleData(en);
     NzLayoutModule, 
     IconsProviderModule, 
     NzMenuModule,
-    NzTableModule
+    NzTableModule,
+    NzFormModule,
+    NzButtonModule,
+    NzInputModule,
+    NzTypographyModule,
+    NzAvatarModule,
+    NzSelectModule
    
   ],
   providers: [

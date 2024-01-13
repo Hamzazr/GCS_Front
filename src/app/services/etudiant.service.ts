@@ -8,7 +8,7 @@ import { Etudiant } from '../models/etudiant.model';
   providedIn: 'root'
 })
 export class EtudiantService {
-  private baseUrl = 'http://localhost:8080/etudiant'; 
+  private baseUrl = 'http://localhost:8080/api/Etudiants'; 
 
   constructor(private http: HttpClient) { }
 
