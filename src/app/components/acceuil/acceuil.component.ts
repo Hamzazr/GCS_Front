@@ -8,9 +8,11 @@ import { Router } from '@angular/router';
   styleUrl: './acceuil.component.scss'
 })
 export class AcceuilComponent{
-
+  showProfileList: boolean = false;
   constructor(private router: Router) {}
 
- 
- 
+  toggleProfileList() {
+    this.showProfileList = !this.showProfileList;
+  }
+
 }

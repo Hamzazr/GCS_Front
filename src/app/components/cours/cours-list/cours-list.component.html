@@ -1,1 +1,26 @@
-<p>cours-list works!</p>
+
+<nz-table #editRowTable nzBordered [nzData]="etudiants">
+    <thead>
+      <tr>
+        <th nzWidth="30%">Nom</th>
+        <th>Prenom</th>
+        <th>Filiere</th>
+        <th>Groupe</th>
+        <th>Tele</th>
+        <th>Mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let etudiant of etudiants" class="editable-row">
+        <td>{{ cours.nom }}</td>
+        <td>{{ cours.prenom }}</td>
+        <td>{{ cours.filiere }}</td>
+        <td>{{ cours.groupe }}</td>
+        <td>{{ cours.tele }}</td>
+        <td>{{ cours.mail }}</td>
+      </tr>
+    </tbody>
+</nz-table>
+
+  
+
