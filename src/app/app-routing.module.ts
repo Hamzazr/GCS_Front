@@ -10,6 +10,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
 import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
 import { CoursEditComponent } from './components/cours/cours-edit/cours-edit.component';
+import { GroupsAddComponent } from './components/group/groups-add/groups-add.component';
+import { GroupsEditComponent } from './components/group/groups-edit/groups-edit.component';
+import { GroupsListComponent } from './components/group/groups-list/groups-list.component';
 
 const routes: Routes = [
 
@@ -42,6 +45,18 @@ const routes: Routes = [
       {
         path:'EditE/:id',
         component: EtudiantEditComponent
+      },
+      {
+        path:'groupsadd', 
+        component: GroupsAddComponent
+      },
+      {
+        path:'groups', 
+        component: GroupsListComponent
+      },
+      {
+        path:'groups/edit/:id',
+        component: GroupsEditComponent
       },
       {
         path:'listC',

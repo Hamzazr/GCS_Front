@@ -32,6 +32,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
 import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
 import { CoursEditComponent } from './components/cours/cours-edit/cours-edit.component';
+import { GroupsAddComponent } from './components/group/groups-add/groups-add.component';
+import { GroupsEditComponent } from './components/group/groups-edit/groups-edit.component';
+import { GroupsListComponent } from './components/group/groups-list/groups-list.component';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 
 registerLocaleData(en); 
@@ -49,7 +53,10 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     LoginComponent,
     SignUpComponent,
     HomePageComponent,
-    CoursEditComponent
+    CoursEditComponent,
+    GroupsEditComponent,
+    GroupsAddComponent,
+    GroupsListComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,8 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     NzInputModule,
     NzTypographyModule,
     NzAvatarModule,
-    NzSelectModule
+    NzSelectModule,
+    NzCheckboxModule
    
   ],
   providers: [
