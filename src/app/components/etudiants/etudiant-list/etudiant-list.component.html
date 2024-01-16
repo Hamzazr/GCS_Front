@@ -18,6 +18,8 @@
           <th>Prenom</th>
           <th>Tele</th>
           <th>Email</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -27,9 +29,9 @@
           <td>{{ etud.lastName }}</td>
           <td>{{ etud.phone }}</td>
           <td>{{ etud.email }}</td>
-          <!-- <td>
-            <span nz-icon nzType="edit" nzTheme="twotone" (click)=""></span>
-          </td> -->
+          <td>
+            <span nz-icon nzType="edit" nzTheme="twotone" ></span>
+          </td> 
   
           <td>
             <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteEtudiant(etud.id!)"></span>

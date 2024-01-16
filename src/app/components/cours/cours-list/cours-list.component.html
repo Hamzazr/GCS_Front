@@ -1,28 +1,27 @@
-
 <nz-table #editRowTable nzBordered [nzData]="cours!">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Titre</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cour of cours" class="editable-row">
-        <td>{{ cour.id }}</td>
-        <td>{{ cour.title }}</td>
-        <td>{{ cour.description }}</td>
-        <td>
-          <button nz-button nzType="primary" type="button" (click)="showEditCour(cour.id!)">Edit</button>
-            <!-- <span nz-icon nzType="edit" nzTheme="twotone"><button></button></span> -->
-        </td> 
-  
-        <td>
-            <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteCours(cour.id!)"></span>
-        </td> 
-      </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Titre</th>
+      <th>Description</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cour of cours" class="editable-row">
+      <td>{{ cour.id }}</td>
+      <td>{{ cour.title }}</td>
+      <td>{{ cour.description }}</td>
+      <td>
+        <!-- <button nz-button nzType="primary" type="button" (click)="showEditCour(cour.id!)">Edit</button> -->
+        <span nz-icon nzType="edit" nzTheme="twotone" (click)="showEditCour(cour.id!)"></span>
+      </td> 
+      
+      <td>
+          <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteCours(cour.id!)"></span>
+      </td> 
+    </tr>
+    
+  </tbody>
 </nz-table>
-
-  
-

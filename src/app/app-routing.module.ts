@@ -10,6 +10,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
 import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
 import { CoursEditComponent } from './components/cours/cours-edit/cours-edit.component';
+import { TeacherEditComponent } from './components/teacher/teacher-edit/teacher-edit.component';
+import { TeacherAddComponent } from './components/teacher/teacher-add/teacher-add.component';
+import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 
 const routes: Routes = [
 
@@ -54,6 +57,18 @@ const routes: Routes = [
       {
         path:'AddC', 
         component: CoursAddComponent
+      },
+      {
+        path:'AddT', 
+        component: TeacherAddComponent
+      },
+      {
+        path:'listT', 
+        component: TeacherListComponent
+      },
+      {
+        path:'EditT/:id',
+        component: TeacherEditComponent
       },
     ],
   },

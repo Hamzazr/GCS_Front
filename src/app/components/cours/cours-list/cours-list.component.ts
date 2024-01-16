@@ -10,15 +10,16 @@ import { Router } from '@angular/router';
   styleUrl: './cours-list.component.scss'
 })
 export class CoursListComponent implements OnInit {
+  
   cours!: Cours[];
 
-  constructor(private router : Router, private coursService: CoursService) { }
+  constructor(private router: Router, private coursService: CoursService) { }
 
   ngOnInit(): void {
-    this.retrieveCours()
+    this.retrieveCours();
   }
 
-  showEditCour(id: number): void{
+  showEditCour(id: number): void {
     this.router.navigate(['/EditC', id]);
   }
 
@@ -42,5 +43,7 @@ export class CoursListComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
+
+ 
   
 }
