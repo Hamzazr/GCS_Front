@@ -18,8 +18,8 @@ export class CoursListComponent implements OnInit {
     this.retrieveCours()
   }
 
-  showEditCour(){
-    this.router.navigate(['/EditC']);
+  showEditCour(id: number): void{
+    this.router.navigate(['/EditC', id]);
   }
 
   retrieveCours(): void{

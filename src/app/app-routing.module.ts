@@ -9,6 +9,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
 import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
+import { CoursEditComponent } from './components/cours/cours-edit/cours-edit.component';
 
 const routes: Routes = [
 
@@ -39,7 +40,7 @@ const routes: Routes = [
         component: EtudiantListComponent
       },
       {
-        path:'EditE',
+        path:'EditE/:id',
         component: EtudiantEditComponent
       },
       {
@@ -47,7 +48,11 @@ const routes: Routes = [
         component: CoursListComponent
       },
       {
-        path:'EditC',
+        path:'EditC/:id',
+        component: CoursEditComponent
+      },
+      {
+        path:'AddC', 
         component: CoursAddComponent
       },
     ],

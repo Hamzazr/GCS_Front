@@ -31,6 +31,7 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
 import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
+import { CoursEditComponent } from './components/cours/cours-edit/cours-edit.component';
 
 
 registerLocaleData(en); 
@@ -47,7 +48,8 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     AcceuilComponent,
     LoginComponent,
     SignUpComponent,
-    HomePageComponent
+    HomePageComponent,
+    CoursEditComponent
   ],
   imports: [
     BrowserModule,

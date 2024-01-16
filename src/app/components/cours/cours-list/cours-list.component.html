@@ -13,13 +13,13 @@
         <td>{{ cour.title }}</td>
         <td>{{ cour.description }}</td>
         <td>
-          <button nz-button nzType="primary" type="button" (click)="showEditCour()">Edit</button>
+          <button nz-button nzType="primary" type="button" (click)="showEditCour(cour.id!)">Edit</button>
             <!-- <span nz-icon nzType="edit" nzTheme="twotone"><button></button></span> -->
         </td> 
   
-          <!-- <td>
-            <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteEtudiant(etud.id!)"></span>
-          </td> -->
+        <td>
+            <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteCours(cour.id!)"></span>
+        </td> 
       </tr>
     </tbody>
 </nz-table>
