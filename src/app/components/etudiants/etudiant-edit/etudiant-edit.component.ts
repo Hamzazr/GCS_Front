@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { EtudiantService } from '../../services/etudiant.service';
+import { EtudiantService } from '../../../services/etudiant.service';
 
 @Component({
-  selector: 'app-etudiant-add',
-  templateUrl: './etudiant-add.component.html',
-  styleUrls: ['./etudiant-add.component.scss']
+  selector: 'app-etudiant-edit',
+  templateUrl: './etudiant-edit.component.html',
+  styleUrl: './etudiant-edit.component.scss'
 })
-export class EtudiantAddComponent implements OnInit {
+export class EtudiantEditComponent implements OnInit {
   etudiantForm!: FormGroup;
   selectedValue = null;
 
@@ -18,16 +18,19 @@ export class EtudiantAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.etudiantForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      phone: ['', Validators.required],
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      filiere: ['', Validators.required],
+      groupe: ['', Validators.required],
+      tele: [''],
       email: ['', [Validators.required, Validators.email]]
     });
   }
 
   onSubmit(): void {
     if (this.etudiantForm.valid) {
-      this.etudiantService.createEtudiant(this.etudiantForm.value).subscribe({
+      const etudiantId = this.etudiantForm.get('id')!.value;
+      this.etudiantService.updateEtudiant(etudiantId , this.etudiantForm.value).subscribe({
         next: (res) => {
           console.log('Etudiant added successfully!', res);
           // Redirect or show a success message

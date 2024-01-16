@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { EtudiantService } from '../../services/etudiant.service';
+import { EtudiantService } from '../../../services/etudiant.service';
 
 @Component({
-  selector: 'app-etudiant-edit',
-  templateUrl: './etudiant-edit.component.html',
-  styleUrl: './etudiant-edit.component.scss'
+  selector: 'app-etudiant-add',
+  templateUrl: './etudiant-add.component.html',
+  styleUrls: ['./etudiant-add.component.scss']
 })
-export class EtudiantEditComponent implements OnInit {
+export class EtudiantAddComponent implements OnInit {
   etudiantForm!: FormGroup;
   selectedValue = null;
 
@@ -18,11 +18,9 @@ export class EtudiantEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.etudiantForm = this.formBuilder.group({
-      nom: ['', Validators.required],
-      prenom: ['', Validators.required],
-      filiere: ['', Validators.required],
-      groupe: ['', Validators.required],
-      tele: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
   }

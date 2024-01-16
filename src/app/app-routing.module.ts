@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EtudiantAddComponent } from './components/etudiant-add/etudiant-add.component';
-import { EtudiantListComponent } from './components/etudiant-list/etudiant-list.component';
-import { EtudiantEditComponent } from './components/etudiant-edit/etudiant-edit.component';
+import { EtudiantAddComponent } from './components/etudiants/etudiant-add/etudiant-add.component';
+import { EtudiantListComponent } from './components/etudiants/etudiant-list/etudiant-list.component';
+import { EtudiantEditComponent } from './components/etudiants/etudiant-edit/etudiant-edit.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';

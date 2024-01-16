@@ -3,9 +3,9 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EtudiantListComponent } from './components/etudiant-list/etudiant-list.component';
-import { EtudiantAddComponent } from './components/etudiant-add/etudiant-add.component';
-import { EtudiantEditComponent } from './components/etudiant-edit/etudiant-edit.component';
+import { EtudiantListComponent } from './components/etudiants/etudiant-list/etudiant-list.component';
+import { EtudiantAddComponent } from './components/etudiants/etudiant-add/etudiant-add.component';
+import { EtudiantEditComponent } from './components/etudiants/etudiant-edit/etudiant-edit.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';

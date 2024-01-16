@@ -1,1 +1,36 @@
-<p>cours-add works!</p>
+
+
+<div id="cadreR" class="border-b border-gray-900/10 pb-12">
+    <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900" style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Modifier Cours</h1>
+  
+    <form nz-form [formGroup]="coursForm" class="space-y-6" (ngSubmit)="onSubmit()">
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Titre </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid titre!">
+            <input nz-input formControlName="title" id="title" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description" nzRequired>Description </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your description!">
+            <input
+              nz-input
+              type="text"
+              id="description"
+              formControlName="description"
+              
+            />
+          </nz-form-control>  
+        </nz-form-item>
+        
+        
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button [nzType]="'primary'">Ajouter</button>
+          </nz-form-control>
+        </nz-form-item>
+    
+  
+  </form>
+  </div>
+  

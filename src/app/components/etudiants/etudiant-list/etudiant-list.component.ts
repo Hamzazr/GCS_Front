@@ -1,8 +1,8 @@
 // src/app/components/etudiant-list/etudiant-list.component.ts
 
 import { ChangeDetectorRef, Component, OnInit, NgZone } from '@angular/core';
-import { Student } from '../../models/student.model';
-import { EtudiantService } from '../../services/etudiant.service';
+import { Student } from '../../../models/student.model';
+import { EtudiantService } from '../../../services/etudiant.service';
 import { Router } from '@angular/router';
 
 
