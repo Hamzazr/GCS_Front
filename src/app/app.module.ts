@@ -26,20 +26,28 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-
+import { PieChartOutline, LogoutOutline, TeamOutline, UserOutline } from '@ant-design/icons-angular/icons';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
+import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
 
 
 registerLocaleData(en); 
+const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
 
 @NgModule({
   declarations: [
     AppComponent,
     EtudiantListComponent,
+    CoursListComponent,
+    CoursAddComponent,
     EtudiantAddComponent,
     EtudiantEditComponent,
     AcceuilComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +71,7 @@ registerLocaleData(en);
   providers: [
     provideHttpClient(withFetch()),
     { provide: NZ_I18N, useValue: en_US },
+    { provide: NZ_ICONS, useValue: icons }
   ],
   bootstrap: [AppComponent]
 })

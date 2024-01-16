@@ -3,32 +3,37 @@
     <ul class="etudiant-list">
       <li *ngFor="let etudiant of etudiants" class="etudiant-item">
         <span class="etudiant-info">
-          {{ etudiant.nom }} {{ etudiant.prenom }} - {{ etudiant.filiere }}
+          {{ etudiant.lastName }} {{ etudiant.firstName }} - {{ etudiant.phone }}
         </span>
-        <button class="delete-btn" (click)="deleteEtudiant(etudiant.id)">Delete</button>
+        <button class="delete-btn" (click)="deleteEtudiant(etudiant.id!)">Delete</button>
       </li>
     </ul>
 </div> -->
 
-<nz-table #editRowTable nzBordered [nzData]="etudiants">
+<nz-table #editRowTable nzBordered [nzData]="etudiants!">
       <thead>
         <tr>
-          <th nzWidth="30%">Nom</th>
+          <th>Id</th>
+          <th >Nom</th>
           <th>Prenom</th>
-          <th>Filiere</th>
-          <th>Groupe</th>
           <th>Tele</th>
-          <th>Mail</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let etudiant of etudiants" class="editable-row">
-          <td>{{ etudiant.nom }}</td>
-          <td>{{ etudiant.prenom }}</td>
-          <td>{{ etudiant.filiere }}</td>
-          <td>{{ etudiant.groupe }}</td>
-          <td>{{ etudiant.tele }}</td>
-          <td>{{ etudiant.mail }}</td>
+        <tr *ngFor="let etud of etudiants" class="editable-row">
+          <td>{{ etud.id }}</td>
+          <td>{{ etud.firstName }}</td>
+          <td>{{ etud.lastName }}</td>
+          <td>{{ etud.phone }}</td>
+          <td>{{ etud.email }}</td>
+          <!-- <td>
+            <span nz-icon nzType="edit" nzTheme="twotone" (click)=""></span>
+          </td> -->
+  
+          <td>
+            <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteEtudiant(etud.id!)"></span>
+          </td>
         </tr>
       </tbody>
 </nz-table>

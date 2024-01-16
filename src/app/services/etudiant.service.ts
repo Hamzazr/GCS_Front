@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Etudiant } from '../models/etudiant.model';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable} from 'rxjs';
+import { Student } from '../models/student.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EtudiantService {
-  private baseUrl = 'http://localhost:8080/api/Etudiants'; 
+  private baseUrl = 'http://localhost:8080/api/students'; 
 
   constructor(private http: HttpClient) { }
 
-  getAllEtudiants(): Observable<Etudiant[]> {
-    return this.http.get<Etudiant[]>(this.baseUrl);
+  getAllEtudiants(): Observable<Student[]> {
+    return this.http.get<Student[]>(this.baseUrl)
   }
 
-  getEtudiantById(id: number): Observable<Etudiant> {
-    return this.http.get<Etudiant>(`${this.baseUrl}/${id}`);
+
+  getEtudiantById(id: number): Observable<Student> {
+    return this.http.get<Student>(`${this.baseUrl}/${id}`);
   }
 
-  createEtudiant(etudiant: Etudiant): Observable<Object> {
+  createEtudiant(etudiant: Student): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, etudiant);
   }
 
-  updateEtudiant(id: number, etudiant: Etudiant): Observable<Object> {
+  updateEtudiant(id: number, etudiant: Student): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, etudiant);
   }
 

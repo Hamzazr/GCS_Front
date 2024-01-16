@@ -6,8 +6,16 @@ import { EtudiantEditComponent } from './components/etudiant-edit/etudiant-edit.
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { CoursListComponent } from './components/cours/cours-list/cours-list.component';
+import { CoursAddComponent } from './components/cours/cours-add/cours-add.component';
 
 const routes: Routes = [
+
+  {
+    path:'',
+    component: HomePageComponent
+  },
 
   {
     path:'login',
@@ -19,7 +27,7 @@ const routes: Routes = [
   },
 
   {
-    path: '',  
+    path: 'dashbord',  
     component: AcceuilComponent,
     children: [
       {
@@ -33,6 +41,14 @@ const routes: Routes = [
       {
         path:'EditE',
         component: EtudiantEditComponent
+      },
+      {
+        path:'listC',
+        component: CoursListComponent
+      },
+      {
+        path:'EditC',
+        component: CoursAddComponent
       },
     ],
   },

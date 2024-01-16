@@ -18,11 +18,9 @@ export class EtudiantAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.etudiantForm = this.formBuilder.group({
-      nom: ['', Validators.required],
-      prenom: ['', Validators.required],
-      filiere: ['', Validators.required],
-      groupe: ['', Validators.required],
-      tele: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
   }

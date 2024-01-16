@@ -1,23 +1,25 @@
 
-<nz-table #editRowTable nzBordered [nzData]="etudiants">
+<nz-table #editRowTable nzBordered [nzData]="cours!">
     <thead>
       <tr>
-        <th nzWidth="30%">Nom</th>
-        <th>Prenom</th>
-        <th>Filiere</th>
-        <th>Groupe</th>
-        <th>Tele</th>
-        <th>Mail</th>
+        <th>Id</th>
+        <th>Titre</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let etudiant of etudiants" class="editable-row">
-        <td>{{ cours.nom }}</td>
-        <td>{{ cours.prenom }}</td>
-        <td>{{ cours.filiere }}</td>
-        <td>{{ cours.groupe }}</td>
-        <td>{{ cours.tele }}</td>
-        <td>{{ cours.mail }}</td>
+      <tr *ngFor="let cour of cours" class="editable-row">
+        <td>{{ cour.id }}</td>
+        <td>{{ cour.title }}</td>
+        <td>{{ cour.description }}</td>
+        <td>
+          <button nz-button nzType="primary" type="button" (click)="showEditCour()">Edit</button>
+            <!-- <span nz-icon nzType="edit" nzTheme="twotone"><button></button></span> -->
+        </td> 
+  
+          <!-- <td>
+            <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteEtudiant(etud.id!)"></span>
+          </td> -->
       </tr>
     </tbody>
 </nz-table>
