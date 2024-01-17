@@ -16,7 +16,7 @@ import { Group } from '../../../models/group.model';
 })
 export class GroupsAddComponent implements OnInit {
   form!: FormGroup;
-  selectedStudents!: Student[];
+  selectedStudents!: number[];
   cours!: Cours[];
   teachers!: Teacher[];
   students!: Student[];
@@ -39,8 +39,6 @@ export class GroupsAddComponent implements OnInit {
       title: ['', Validators.required],
       cour: ['', Validators.required],
       teacher: ['', Validators.required],
-      students: ['', Validators.required],
-
     });
   }
 
@@ -55,7 +53,8 @@ export class GroupsAddComponent implements OnInit {
   }
 
   checkValue(event: any){
-    console.log(event);
+    console.log(event)
+    this.selectedStudents = event;
   
  }
 
@@ -82,7 +81,7 @@ export class GroupsAddComponent implements OnInit {
   onSubmit(): void {
     console.log("cour ",this.form)
     this.groupsService.createCours(
-      new Group(0, this.form.value.title , {"id":this.form.value.cour}, {"id":this.form.value.teacher}, this.selectedStudents ?? [])
+      new Group(0, this.form.value.title , {"id":this.form.value.cour}, {"id":this.form.value.teacher}, (this.selectedStudents ?? []).map(e => new Student(e)))
     ) .subscribe({
       next: (data) => {
       },

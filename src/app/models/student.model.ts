@@ -4,4 +4,8 @@ export class Student {
     lastName?: string;
     phone?: string;
     email?: string;
+
+    constructor(id?: number,) {
+      this.id = id;
+    }
   }

@@ -24,6 +24,7 @@ export class GroupsListComponent implements OnInit {
   }
 
   getStudentListContent(ss: Student[]): string {
+    console.log("ss,", ss)
     return `
       <ul>
         ${ss.map(s => `<li>${s.firstName}  ${s.lastName}</li>`).join('')}
