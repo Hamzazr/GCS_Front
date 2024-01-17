@@ -1,8 +1,8 @@
 <div id="cadreR" class="border-b border-gray-900/10 pb-12">
   <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900"
-    style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Modifier Cours</h1>
+    style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Ajouter Group</h1>
 
-  <form nz-form [formGroup]="coursForm" class="space-y-6" (ngSubmit)="onSubmit()">
+  <form nz-form [formGroup]="form" class="space-y-6" (ngSubmit)="onSubmit()">
     <nz-form-item>
       <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Name: </nz-form-label>
       <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid titre!">
@@ -19,19 +19,19 @@
 
     <nz-form-item>
       <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Teachers: </nz-form-label>
-      <nz-select *ngFor="let item of teachers;" formControlName="cour">
+      <nz-select *ngFor="let item of teachers;" formControlName="teacher">
         <nz-option [nzValue]="item.id" [nzLabel]="item.firstName! + ' ' + item.lastName!"></nz-option>
       </nz-select>
     </nz-form-item>
 
-    <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Students: </nz-form-label>
-    <nz-checkbox-wrapper style="width: 100%;">
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title" >Students:</nz-form-label>
+    <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="checkValue($event)">
       <div nz-row *ngFor="let item of students;">
-        <div nz-col nzSpan="8"><label nz-checkbox nzValue="students.id" [ngModel]="true">{{item.firstName! + ' ' + item.lastName!}}</label></div>
+        <div nz-col nzSpan="">
+          <label nz-checkbox [nzValue]="item.id">{{item.firstName! + ' ' + item.lastName!}}</label>
+        </div>
       </div>
     </nz-checkbox-wrapper>
-    </nz-form-item>
 
 
     <nz-form-item nz-row class="register-area">

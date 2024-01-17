@@ -6,6 +6,8 @@ import { Teacher } from '../../../models/teacher.model';
 import { TeacherService } from '../../../services/teachers.service';
 import { EtudiantService } from '../../../services/etudiant.service';
 import { Student } from '../../../models/student.model';
+import { GroupsService } from '../../../services/groups.service';
+import { Group } from '../../../models/group.model';
 
 @Component({
   selector: 'app-groups-add',
@@ -13,7 +15,8 @@ import { Student } from '../../../models/student.model';
   styleUrl: './groups-add.component.scss'
 })
 export class GroupsAddComponent implements OnInit {
-  coursForm!: FormGroup;
+  form!: FormGroup;
+  selectedStudents!: Student[];
   cours!: Cours[];
   teachers!: Teacher[];
   students!: Student[];
@@ -22,6 +25,7 @@ export class GroupsAddComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private groupsService: GroupsService,
     private coursService: CoursService,
     private teachersService: TeacherService,
     private studentsService: EtudiantService,
@@ -31,9 +35,12 @@ export class GroupsAddComponent implements OnInit {
     this.retrieveCours();
     this.retrieveTeachers();
     this.retrieveStudents();
-    this.coursForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       title: ['', Validators.required],
       cour: ['', Validators.required],
+      teacher: ['', Validators.required],
+      students: ['', Validators.required],
+
     });
   }
 
@@ -46,6 +53,11 @@ export class GroupsAddComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
+
+  checkValue(event: any){
+    console.log(event);
+  
+ }
 
   retrieveStudents(): void{
     this.studentsService.getAllEtudiants()
@@ -68,9 +80,13 @@ export class GroupsAddComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.coursForm.valid) {
-      console.log("cour ",this.coursForm)
-
-    }
+    console.log("cour ",this.form)
+    this.groupsService.createCours(
+      new Group(0, this.form.value.title , {"id":this.form.value.cour}, {"id":this.form.value.teacher}, this.selectedStudents ?? [])
+    ) .subscribe({
+      next: (data) => {
+      },
+      error: (e) => console.error(e)
+    });
   }
 }

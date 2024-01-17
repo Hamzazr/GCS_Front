@@ -1,0 +1,33 @@
+<ng-template #studentListTemplate let-data>
+    <div *ngFor="let student of data.students">
+      <p>{{ student.name }} - {{ student.grade }}</p>
+    </div>
+  </ng-template>
+<nz-table #editRowTable nzBordered [nzData]="groups!">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Group Name</th>
+            <th>Teacher</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let group of groups" class="editable-row" >
+            <td>{{ group.id! }}</td>
+            <td>{{ group.name! }}</td>
+            <td>{{ group.teacher!.firstName!}} {{group.teacher!.lastName!}}</td>
+            <td>{{ group.course!.title!}}</td>
+            <button nz-button nzType="primary" type="button" (click)="showModal(group)">Students</button>
+
+            <td>
+                <button nz-button nzType="primary" type="button" (click)="showEditCour(group.id!)">Edit</button>
+                <!-- <span nz-icon nzType="edit" nzTheme="twotone"><button></button></span> -->
+            </td>
+
+            <td>
+                <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteCours(group.id!)"></span>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

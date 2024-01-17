@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +60,7 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     GroupsListComponent
   ],
   imports: [
+    NzModalModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
@@ -75,8 +77,7 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     NzTypographyModule,
     NzAvatarModule,
     NzSelectModule,
-    NzCheckboxModule
-   
+    NzCheckboxModule,
   ],
   providers: [
     provideHttpClient(withFetch()),

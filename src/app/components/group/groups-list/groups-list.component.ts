@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CoursService } from '../../../services/cours.service';
-import { Cours } from '../../../models/cours.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { GroupsService } from '../../../services/groups.service';
 import { Router } from '@angular/router';
+import { Group } from '../../../models/group.model';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { Student } from '../../../models/student.model';
 
 
 @Component({
@@ -10,31 +12,57 @@ import { Router } from '@angular/router';
   styleUrl: './groups-list.component.scss'
 })
 export class GroupsListComponent implements OnInit {
-  cours!: Cours[];
+  groups!: Group[];
 
-  constructor(private router : Router, private coursService: CoursService) { }
+  
+  isVisible : boolean = false;
+
+  constructor(private router : Router, private modalService: NzModalService, private groupsService: GroupsService) { }
 
   ngOnInit(): void {
     this.retrieveCours()
   }
+
+  getStudentListContent(ss: Student[]): string {
+    return `
+      <ul>
+        ${ss.map(s => `<li>${s.firstName}  ${s.lastName}</li>`).join('')}
+      </ul>
+    `;
+  }
+
+  showModal(group: Group): void {
+    const modal = this.modalService.create({
+      nzTitle: 'Student List',
+      nzContent: this.getStudentListContent(group.students ?? []),
+      nzClosable: true,
+      // nzComponentParams: {
+      //   students: group.students ?? []
+      // },
+      nzOnOk: () => console.log('OK')
+    ,
+  
+    });
+  }
+
 
   showEditCour(id: number): void{
     this.router.navigate(['/EditC', id]);
   }
 
   retrieveCours(): void{
-    this.coursService.getAllCours()
+    this.groupsService.getAllCours()
       .subscribe({
         next: (data) => {
-          this.cours = data;
-          console.log("",this.cours)
+          this.groups = data;
+          console.log("",this.groups)
         },
         error: (e) => console.error(e)
       });
   }
 
   deleteCours(id: number): void {
-    this.coursService.deleteCours(id)
+    this.groupsService.deleteCours(id)
       .subscribe({
         next: (data) => {
           console.log(data);
