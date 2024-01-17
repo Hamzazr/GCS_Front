@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +37,9 @@ import { GroupsAddComponent } from './components/group/groups-add/groups-add.com
 import { GroupsEditComponent } from './components/group/groups-edit/groups-edit.component';
 import { GroupsListComponent } from './components/group/groups-list/groups-list.component';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { TeacherAddComponent } from './components/teacher/teacher-add/teacher-add.component';
+import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
+import { TeacherEditComponent } from './components/teacher/teacher-edit/teacher-edit.component';
 
 
 registerLocaleData(en); 
@@ -57,7 +60,10 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     CoursEditComponent,
     GroupsEditComponent,
     GroupsAddComponent,
-    GroupsListComponent
+    GroupsListComponent,
+    TeacherAddComponent,
+    TeacherListComponent,
+    TeacherEditComponent
   ],
   imports: [
     NzModalModule,
