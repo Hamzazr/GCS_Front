@@ -1,1 +1,31 @@
-<p>teacher-list works!</p>
+<nz-table #editRowTable nzBordered [nzData]="teachers!">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th >Nom</th>
+        <th>Prenom</th>
+        <th>Tele</th>
+        <th>Email</th>
+        <th>Speciality</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of teachers" class="editable-row">
+        <td>{{ teacher.id }}</td>
+        <td>{{ teacher.firstName }}</td>
+        <td>{{ teacher.lastName }}</td>
+        <td>{{ teacher.phone }}</td>
+        <td>{{ teacher.email }}</td>
+        <td>{{ teacher.speciality }}</td>
+        <td>
+          <a [routerLink]="['../EditT/', teacher.id]"><span nz-icon nzType="edit" nzTheme="twotone"></span></a>
+        </td> 
+
+        <td>
+          <span nz-icon nzType="delete" nzTheme="twotone" (click)="deleteteachers(teacher.id!)"></span>
+        </td>
+      </tr>
+    </tbody>
+</nz-table>

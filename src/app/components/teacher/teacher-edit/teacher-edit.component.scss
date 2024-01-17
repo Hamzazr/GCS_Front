@@ -1,0 +1,133 @@
+
+
+#cadreR{
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    border: solid 1px gainsboro;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: white;
+  }
+  
+  
+  .login-form {
+    max-width: 300px;
+  }
+  
+  .login-form-margin {
+    margin-bottom: 16px;   
+  }
+  
+  .login-form-forgot {
+    float: right;
+  }
+  
+  .login-form-button {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2874A6;
+  }
+  
+  input{
+    width: 100%; 
+    
+  }
+  form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+  }
+  
+  #cadre{
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  
+  
+  [nz-form] {
+    max-width: 600px;
+  }
+  
+  .phone-select {
+    width: 70px;
+  }
+  
+  .register-are {
+    margin-bottom: 8px;
+  }
+  
+  nz-select {
+    width: 200px;
+  }
+  
+  
+  // .etudiant-add-container {
+  //     max-width: 60%;
+  //     padding: 20px;
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  //     background-color: #2271c0;
+  //     color: #000000;
+  //     border-radius: 10%;
+    
+  //     h2 {
+  //       text-align: center;
+  //     }
+    
+  //     form {
+  //       display: flex;
+  //       flex-direction: column;
+        
+    
+  //       div {
+  //         margin-bottom: 10px;
+    
+  //         label {
+  //           display: block;
+  //         }
+    
+  //         input[type="text"],
+  //         input[type="number"],
+  //         input[type="email"] {
+  //           width: 100%;
+  //           padding: 8px;
+  //           border: 1px solid #ccc;
+  //           border-radius: 4px;
+  //         }
+  //       }
+    
+  //       button {
+  //         background-color: #007bff;
+  //         color: white;
+  //         padding: 10px 15px;
+  //         border: none;
+  //         border-radius: 4px;
+  //         cursor: pointer;
+  //         margin-left: auto;
+  //         margin-right: auto;
+    
+  //         &:disabled {
+  //           background-color: #d6b2b2;
+  //         }
+  //       }
+  //       .error {
+  //         color: red;
+  //         font-size: 0.8em;
+  //       }
+  //     }
+  //   }
+  
+  //   .div-R{
+  //     margin-left: 0;
+  //   }
+    
+  
+  

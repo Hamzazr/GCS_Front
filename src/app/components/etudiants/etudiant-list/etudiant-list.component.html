@@ -30,7 +30,7 @@
           <td>{{ etud.phone }}</td>
           <td>{{ etud.email }}</td>
           <td>
-            <span nz-icon nzType="edit" nzTheme="twotone" ></span>
+            <a [routerLink]="['../EditE/', etud.id]"><span nz-icon nzType="edit" nzTheme="twotone"></span></a>
           </td> 
   
           <td>

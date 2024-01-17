@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { CoursService } from '../../../services/cours.service';
 import { Cours } from '../../../models/cours.model';
 import { Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { TeacherAddComponent } from '../../teacher/teacher-add/teacher-add.component';
+import { CoursEditComponent } from '../cours-edit/cours-edit.component';
 
 
 @Component({
@@ -15,13 +18,16 @@ export class CoursListComponent implements OnInit {
 
   constructor(private router: Router, private coursService: CoursService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.retrieveCours();
   }
 
   showEditCour(id: number): void {
-    this.router.navigate(['/EditC', id]);
-  }
+    console.log(id); // Check if id is defined
+    this.router.navigate(['../EditC/', id])
+      .then(success => console.log('Navigation success:', success))
+      .catch(error => console.error('Navigation error:', error));
+}
 
   retrieveCours(): void{
     this.coursService.getAllCours()
@@ -43,6 +49,13 @@ export class CoursListComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
+  
+
+  
+
+  
+  
+  
 
  
   

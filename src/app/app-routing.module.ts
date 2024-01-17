@@ -47,7 +47,8 @@ const routes: Routes = [
       },
       {
         path:'EditE/:id',
-        component: EtudiantEditComponent
+        component: EtudiantEditComponent,
+        pathMatch: 'full'
       },
       {
         path:'groupsadd', 
@@ -66,7 +67,7 @@ const routes: Routes = [
         component: CoursListComponent
       },
       {
-        path:'EditC/:id',
+        path: 'EditC/:id',
         component: CoursEditComponent
       },
       {

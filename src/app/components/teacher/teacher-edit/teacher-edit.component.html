@@ -1,1 +1,57 @@
-<p>teacher-edit works!</p>
+<div id="cadreR" class="border-b border-gray-900/10 pb-12">
+    <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900" style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Modifier Teacher</h1>
+  
+    <form nz-form [formGroup]="teacherForm" class="space-y-6" (ngSubmit)="onSubmit()" >
+  
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="prenom" nzRequired>Prenom </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Prenom!">
+          <input
+            nz-input
+            type="text"
+            id="prenom"
+            formControlName="firstName"
+            
+          />
+        </nz-form-control>  
+      </nz-form-item>
+  
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nom">Nom </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Nom!">
+            <input nz-input formControlName="lastName" id="nom" />
+          </nz-form-control>
+        </nz-form-item>
+        
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="telephone" nzRequired>Telephone </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input telephone!">
+            <input nz-input type="telephone" id="telephone" formControlName="phone" placeholder="telephone" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>Email </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Email!">
+            <input nz-input id="email" formControlName="email" placeholder="Email" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="speciality" nzRequired>Speciality </nz-form-label>
+            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Speciality!">
+              <input nz-input id="speciality" formControlName="speciality" placeholder="Speciality" />
+            </nz-form-control>
+          </nz-form-item>
+        
+        
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button [nzType]="'primary'">Modifier</button>
+          </nz-form-control>
+        </nz-form-item>
+    
+  
+  </form>
+  </div>

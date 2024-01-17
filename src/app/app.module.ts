@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { NzModalModule } from 'ng-zorro-antd/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +39,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { TeacherAddComponent } from './components/teacher/teacher-add/teacher-add.component';
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { TeacherEditComponent } from './components/teacher/teacher-edit/teacher-edit.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 
 registerLocaleData(en); 
@@ -84,6 +84,8 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     NzAvatarModule,
     NzSelectModule,
     NzCheckboxModule,
+    NzModalModule
+   
   ],
   providers: [
     provideHttpClient(withFetch()),
