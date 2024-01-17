@@ -13,24 +13,24 @@ export class GroupsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCours(): Observable<Group[]> {
+  getAllGroupes(): Observable<Group[]> {
     return this.http.get<Group[]>(this.baseUrl)
   }
 
 
-  getCoursById(id: number): Observable<Group> {
+  getGroupeById(id: number): Observable<Group> {
     return this.http.get<Cours>(`${this.baseUrl}/${id}`);
   }
 
-  createCours(cour: Group): Observable<Object> {
+  createGroupe(cour: Group): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, cour);
   }
 
-  updateCours(id: number, cour: Group): Observable<Object> {
+  updateGroupe(id: number, cour: Group): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, cour);
   }
 
-  deleteCours(id: number): Observable<Object> {
+  deleteGroupe(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }

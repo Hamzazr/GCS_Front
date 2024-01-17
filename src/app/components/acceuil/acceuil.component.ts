@@ -15,4 +15,6 @@ export class AcceuilComponent{
     this.showProfileList = !this.showProfileList;
   }
 
+  desktop(): void{
+    this.router.navigate(['/static'])}
 }

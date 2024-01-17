@@ -1,35 +1,46 @@
-
 <div id="cadreR" class="border-b border-gray-900/10 pb-12">
-    <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900" style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Modifier Cours</h1>
-  
-    <form nz-form [formGroup]="coursForm" class="space-y-6" (ngSubmit)="onSubmit()">
-      <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Titre </nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid titre!">
-            <input nz-input formControlName="title" id="title" />
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description" nzRequired>Description </nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your description!">
-            <input
-              nz-input
-              type="text"
-              id="description"
-              formControlName="description"
-              
-            />
-          </nz-form-control>  
-        </nz-form-item>
-        
-        
-        <nz-form-item nz-row class="register-area">
-          <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <button nz-button [nzType]="'primary'">Modifier</button>
-          </nz-form-control>
-        </nz-form-item>
-    
-  
+  <h1 nz-typography class="text-base font-semibold leading-7 text-gray-900"
+    style="text-align: center; margin-top: 30px; margin-bottom: -15px; color: #2874A6;">Modifier Group</h1>
+
+  <form nz-form [formGroup]="groupeForm" class="space-y-6" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Name </nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid titre!">
+        <input nz-input formControlName="title" id="title" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Courses </nz-form-label>
+      <nz-select *ngFor="let item of cours;" formControlName="cour">
+        <nz-option [nzValue]="item.id" [nzLabel]="item.title!"></nz-option>
+      </nz-select>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Teachers </nz-form-label>
+      <nz-select *ngFor="let item of teachers;" formControlName="teacher">
+        <nz-option [nzValue]="item.id" [nzLabel]="item.firstName! + ' ' + item.lastName!"></nz-option>
+      </nz-select>
+    </nz-form-item>
+
+    <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title" >Students</nz-form-label>
+    <nz-checkbox-wrapper style="width: 70%;" (nzOnChange)="checkValue($event)">
+      <div nz-row *ngFor="let item of students;">
+        <div nz-col nzSpan="">
+          <label nz-checkbox [nzValue]="item.id">{{item.firstName! + ' ' + item.lastName!}}</label>
+        </div>
+      </div>
+    </nz-checkbox-wrapper>
+  </nz-form-item>
+
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button [nzType]="'primary'">Modifier</button>
+      </nz-form-control>
+    </nz-form-item>
+
+
   </form>
-  </div>
-  
+</div>

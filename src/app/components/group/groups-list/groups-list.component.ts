@@ -52,7 +52,7 @@ export class GroupsListComponent implements OnInit {
   }
 
   retrieveCours(): void{
-    this.groupsService.getAllCours()
+    this.groupsService.getAllGroupes()
       .subscribe({
         next: (data) => {
           this.groups = data;
@@ -63,7 +63,7 @@ export class GroupsListComponent implements OnInit {
   }
 
   deleteCours(id: number): void {
-    this.groupsService.deleteCours(id)
+    this.groupsService.deleteGroupe(id)
       .subscribe({
         next: (data) => {
           console.log(data);

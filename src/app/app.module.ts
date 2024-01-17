@@ -40,6 +40,8 @@ import { TeacherAddComponent } from './components/teacher/teacher-add/teacher-ad
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { TeacherEditComponent } from './components/teacher/teacher-edit/teacher-edit.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { StatComponent } from './components/static/stat/stat.component';
+import { NzCalendarModule } from 'ng-zorro-antd/calendar';
 
 
 registerLocaleData(en); 
@@ -63,7 +65,8 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     GroupsListComponent,
     TeacherAddComponent,
     TeacherListComponent,
-    TeacherEditComponent
+    TeacherEditComponent,
+    StatComponent
   ],
   imports: [
     NzModalModule,
@@ -84,7 +87,8 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     NzAvatarModule,
     NzSelectModule,
     NzCheckboxModule,
-    NzModalModule
+    NzModalModule,
+    NzCalendarModule
    
   ],
   providers: [

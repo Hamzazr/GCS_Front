@@ -22,7 +22,7 @@ export class EtudiantEditComponent implements OnInit {
   ngOnInit(): void {
     this.etudiantId = +this.route.snapshot.paramMap.get('id')!;
     this.etudiantForm = this.formBuilder.group({
-      nom: ['', Validators.required],
+      nom: ['', Validators.required], 
       prenom: ['', Validators.required],
       filiere: ['', Validators.required],
       tele: [''],

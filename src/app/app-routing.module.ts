@@ -16,13 +16,15 @@ import { GroupsListComponent } from './components/group/groups-list/groups-list.
 import { TeacherAddComponent } from './components/teacher/teacher-add/teacher-add.component';
 import { TeacherEditComponent } from './components/teacher/teacher-edit/teacher-edit.component';
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
+import { StatComponent } from './components/static/stat/stat.component';
 
 const routes: Routes = [
 
   {
-    path:'',
+    path:'home',
     component: HomePageComponent
   },
+
 
   {
     path:'login',
@@ -37,6 +39,10 @@ const routes: Routes = [
     path: 'dashbord',  
     component: AcceuilComponent,
     children: [
+      {
+        path:'',
+        component: StatComponent
+      },
       {
         path:'AddE', 
         component: EtudiantAddComponent
@@ -59,7 +65,7 @@ const routes: Routes = [
         component: GroupsListComponent
       },
       {
-        path:'groups/edit/:id',
+        path:'EditG/:id',
         component: GroupsEditComponent
       },
       {

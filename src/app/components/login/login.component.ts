@@ -24,5 +24,9 @@ export class LoginComponent implements OnInit{
       password: new FormControl(null, [Validators.required, Validators.minLength(3)])
     })
   }
+
+  logout(): void{
+    this.router.navigate(['../../home']);
+  }
   
 }

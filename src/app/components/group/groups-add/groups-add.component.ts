@@ -80,7 +80,7 @@ export class GroupsAddComponent implements OnInit {
 
   onSubmit(): void {
     console.log("cour ",this.form)
-    this.groupsService.createCours(
+    this.groupsService.createGroupe(
       new Group(0, this.form.value.title , {"id":this.form.value.cour}, {"id":this.form.value.teacher}, (this.selectedStudents ?? []).map(e => new Student(e)))
     ) .subscribe({
       next: (data) => {

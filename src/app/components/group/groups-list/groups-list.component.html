@@ -6,19 +6,24 @@
             <th>Group Name</th>
             <th>Teacher</th>
             <th>Course</th>
+            <th>Etudiant</th>
+            <th>Modifier</th>
+            <th>Delete</th>
+            
         </tr>
-    </thead>
+    </thead> 
     <tbody>
         <tr *ngFor="let group of groups" class="editable-row" >
             <td>{{ group.id! }}</td>
             <td>{{ group.name! }}</td>
             <td>{{ group.teacher!.firstName!}} {{group.teacher!.lastName!}}</td>
             <td>{{ group.course!.title!}}</td>
-            <button nz-button nzType="primary" type="button" (click)="showModal(group)">Students</button>
-
             <td>
-                <button nz-button nzType="primary" type="button" (click)="showEditCour(group.id!)">Edit</button>
-                <!-- <span nz-icon nzType="edit" nzTheme="twotone"><button></button></span> -->
+                <button nz-button nzType="primary" type="button" (click)="showModal(group)">Students</button>
+            </td>
+            <td>
+                <!-- <button nz-button nzType="primary" type="button" (click)="showEditCour(group.id!)">Edit</button> -->
+                <a [routerLink]="['../EditG/', group.id]"><span nz-icon nzType="edit" nzTheme="twotone"></span></a>
             </td>
 
             <td>
