@@ -44,14 +44,15 @@ const routes: Routes = [
       },
       {
         path:'EditE/:id',
-        component: EtudiantEditComponent
+        component: EtudiantEditComponent,
+        pathMatch: 'full'
       },
       {
         path:'listC',
         component: CoursListComponent
       },
       {
-        path:'EditC/:id',
+        path: 'EditC/:id',
         component: CoursEditComponent
       },
       {

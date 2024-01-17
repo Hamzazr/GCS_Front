@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cours } from '../models/cours.model';
+import { CoursEditComponent } from '../components/cours/cours-edit/cours-edit.component';
+import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Injectable({
   providedIn: 'root'
@@ -32,4 +34,7 @@ export class CoursService {
   deleteCours(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+
+  
+
 }

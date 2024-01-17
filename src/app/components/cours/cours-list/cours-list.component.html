@@ -14,8 +14,7 @@
       <td>{{ cour.title }}</td>
       <td>{{ cour.description }}</td>
       <td>
-        <!-- <button nz-button nzType="primary" type="button" (click)="showEditCour(cour.id!)">Edit</button> -->
-        <span nz-icon nzType="edit" nzTheme="twotone" (click)="showEditCour(cour.id!)"></span>
+        <a [routerLink]="['../EditC/', cour.id]"><span nz-icon nzType="edit" nzTheme="twotone"></span></a>
       </td> 
       
       <td>

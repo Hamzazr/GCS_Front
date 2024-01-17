@@ -35,6 +35,7 @@ import { CoursEditComponent } from './components/cours/cours-edit/cours-edit.com
 import { TeacherAddComponent } from './components/teacher/teacher-add/teacher-add.component';
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { TeacherEditComponent } from './components/teacher/teacher-edit/teacher-edit.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 
 registerLocaleData(en); 
@@ -73,7 +74,8 @@ const icons = [PieChartOutline, LogoutOutline, TeamOutline, UserOutline];
     NzInputModule,
     NzTypographyModule,
     NzAvatarModule,
-    NzSelectModule
+    NzSelectModule,
+    NzModalModule
    
   ],
   providers: [

@@ -12,24 +12,24 @@ export class TeacherService {
 
   constructor(private http: HttpClient) { }
 
-  getAllEtudiants(): Observable<Teacher[]> {
+  getAllTeacher(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.baseUrl)
   }
 
 
-  getEtudiantById(id: number): Observable<Teacher> {
+  getTeacherById(id: number): Observable<Teacher> {
     return this.http.get<Teacher>(`${this.baseUrl}/${id}`);
   }
 
-  createEtudiant(teacher: Teacher): Observable<Object> {
+  createTeacher(teacher: Teacher): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, teacher);
   }
 
-  updateEtudiant(id: number, teacher: Teacher): Observable<Object> {
+  updateTeacher(id: number, teacher: Teacher): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, teacher);
   }
 
-  deleteEtudiant(id: number): Observable<Object> {
+  deleteTeacher(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }

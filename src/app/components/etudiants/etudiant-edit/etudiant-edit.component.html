@@ -23,20 +23,7 @@
           </nz-form-control>  
         </nz-form-item>
       
-        <nz-form-item>
-          <nz-form-label
-            [nzSm]="6"
-            [nzXs]="24"
-            nzFor="filiere"
-            nzRequired
-            nzTooltipTitle="What do you want other to call you"
-          >
-            <span>Filiere </span>
-          </nz-form-label>
-          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your filiere!">
-            <input nz-input id="filiere" formControlName="filiere" />
-          </nz-form-control>
-        </nz-form-item>
+        
         
         <!-- <nz-form-item>
           <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="groupe" nzRequired>Groupe </nz-form-label>
@@ -45,16 +32,7 @@
           </nz-form-control>
         </nz-form-item> -->
   
-        <nz-form-item>
-          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="groupe" nzRequired>Groupe </nz-form-label>
-            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Groupe!">
-              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" [(ngModel)]="selectedValue">
-                <nz-option nzLabel="G1" nzValue="jack"></nz-option>
-                <nz-option nzLabel="G2" nzValue="lucy"></nz-option>
-                <nz-option nzLabel="G3" nzValue="tom"></nz-option>
-              </nz-select>
-            </nz-form-control>
-        </nz-form-item>
+       
   
         <nz-form-item>
           <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>Email </nz-form-label>
